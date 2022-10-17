@@ -2,7 +2,7 @@
 // const ARRAY_1 = [3, 5, -4, 8, 11, 1, -1, 6]
 Object.defineProperty(exports, "__esModule", { value: true });
 class TwoArraySum {
-    // time: 0(n^2) 
+    // time: 0(n^2)
     // space: 0(1)
     calcNaive(array, target) {
         for (let i = 0; i < array.length - 1; i++) {
@@ -15,7 +15,7 @@ class TwoArraySum {
         }
         return [];
     }
-    // time: 0(n) 
+    // time: 0(n)
     // space: 0(1)
     calcBetter(array, target) {
         const saveResult = {};
@@ -26,10 +26,9 @@ class TwoArraySum {
                 return [y, x];
             saveResult[y] = true;
         }
-        ;
         return [];
     }
-    // time: 0(log(n)) 
+    // time: 0(log(n))
     // space: 0(1)
     calc(array, target) {
         const sortedArray = array.sort((a, b) => a - b);
