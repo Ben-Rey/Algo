@@ -1,4 +1,4 @@
-import Search from "./main";
+import Search, { TwoCrystalBalls } from "./main";
 
 describe("Linear Search", () => {
   let search: Search;
@@ -55,5 +55,23 @@ describe("Binary Search", () => {
     expect(search.binarySearch(list, 99)).toBe(true);
     expect(search.binarySearch(list, 1337)).toBe(true);
     expect(search.binarySearch(list, 69420)).toBe(true);
+  });
+});
+
+describe("Two cristal ball problem", () => {
+  let twoCrystalBalls: TwoCrystalBalls;
+  beforeEach(() => {
+    twoCrystalBalls = new TwoCrystalBalls();
+  });
+  it("should do something", () => {
+    let idx = Math.floor(Math.random() * 10000);
+    const data = new Array(10000).fill(false);
+
+    for (let i = idx; i < 10000; ++i) {
+      data[i] = true;
+    }
+
+    expect(twoCrystalBalls.handle(new Array(821).fill(false))).toEqual(-1);
+    expect(twoCrystalBalls.handle(data)).toEqual(idx);
   });
 });

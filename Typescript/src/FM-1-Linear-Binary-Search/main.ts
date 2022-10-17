@@ -22,3 +22,25 @@ export default class Search {
     return false;
   }
 }
+
+export class TwoCrystalBalls {
+  handle(data: boolean[]) {
+    const gap = Math.floor(Math.sqrt(data.length));
+
+    let i = gap;
+
+    for (; i < data.length; i += gap) {
+      if (data[i]) {
+        break;
+      }
+    }
+
+    i -= gap;
+
+    for (; i < data.length; i++) {
+      if (data[i]) return i;
+    }
+
+    return -1;
+  }
+}
